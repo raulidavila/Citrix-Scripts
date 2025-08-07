@@ -1,0 +1,12 @@
+# The format of this file is very simple
+# The first line will be used for the Title of the Notification
+# Any other lines after the first line will be used for the Body of the Notification
+# Any line beginning with a # will be treated as a comment and ignored. Empty lines will also be ignored
+
+# Below is the first non-commented line, which will be the Title of the Notification
+Scheduled server operations
+
+# The rest of the lines below will be used for the Body of the Notification
+This server will be rebooted within the next hour.
+Please save your data and log off.
+After logging off, you can start new sessions or re-launch applications if needed.
