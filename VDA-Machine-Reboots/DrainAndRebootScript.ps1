@@ -742,7 +742,7 @@ $processStartTime = Get-Date
 
 # Get a list of VDA Objects that match the Reboot Tag
 try {
-    $servers = Get-BrokerMachine -AdminAddress $Global:ddcAddress -MaxRecordCount 1500  -ErrorAction Stop | Where-Object {($_.Tags.ToUpper() -contains $RebootTag.ToUpper())}
+    $servers = Get-BrokerMachine -AdminAddress $Global:ddcAddress -MaxRecordCount 1500 -ErrorAction Stop | Where-Object {($_.Tags -contains $RebootTag)}
 } catch {
     LogCritical "Could not enumerate servers from Delivery Controller $($Global:ddcAddress) `n $_.Exception.Message"
 }
@@ -763,3 +763,4 @@ if($null -ne $servers -and $servers.count -gt 0) {
 
 UnlockRebootSchedule $RebootTag
 FinishLog $processStartTime $scriptTimer.Elapsed
+
